@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Discover the best AI tools in the market. Curated directory of AI tools for image generation, text, video, code, and audio.">
+
+    <!-- SEO & Social Meta Tags -->
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://attenx-ai.vercel.app/pages/ai-tools.html">
+
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://attenx-ai.vercel.app/pages/ai-tools.html">
+    <meta property="og:title" content="AI Tools Directory | AttenX-AI">
+    <meta property="og:description"
+        content="Discover top AI tools for every need. Curated, categorized, and reviewed by experts.">
+
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://attenx-ai.vercel.app/pages/ai-tools.html">
+    <meta property="twitter:title" content="AI Tools Directory | AttenX-AI">
+    <meta property="twitter:description"
+        content="Discover top AI tools for every need. Curated, categorized, and reviewed by experts.">
+
+    <title>AI Tools Directory | AttenX-AI</title>
+
+    <link rel="icon" type="image/svg+xml"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%237C3AED' rx='20' width='100' height='100'/><text x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' fill='white' font-size='50' font-weight='bold'>A</text></svg>">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+
+    <!-- Loader - Attention Mechanism Animation -->
+    <div class="loader">
+        <div class="loader-content">
+            <div class="loader-attention">
+                <div class="loader-ring"></div>
+                <div class="loader-ring"></div>
+                <div class="loader-ring"></div>
+                <div class="loader-ring"></div>
+                <div class="loader-core"></div>
+                <div class="loader-node"></div>
+                <div class="loader-node"></div>
+                <div class="loader-node"></div>
+                <div class="loader-node"></div>
+                <div class="loader-line"></div>
+                <div class="loader-line"></div>
+                <div class="loader-line"></div>
+                <div class="loader-line"></div>
+                <div class="loader-line"></div>
+                <div class="loader-line"></div>
+                <div class="loader-line"></div>
+                <div class="loader-line"></div>
+            </div>
+            <div class="loader-text">AttenX</div>
+            <div class="loader-subtext">Loading AI Tools...</div>
+            <div class="loader-progress">
+                <div class="loader-progress-bar"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="../index.html" class="nav-logo">
+                <div class="logo-icon attention-logo">
+                    <div class="attention-ring"></div>
+                    <div class="attention-ring"></div>
+                    <div class="logo-core"></div>
+                    <div class="attention-node"></div>
+                    <div class="attention-node"></div>
+                    <div class="attention-node"></div>
+                    <div class="attention-node"></div>
+                </div>
+                <span class="logo-text">
+                    <span class="atten">Atten</span><span class="x-letter">X</span><span class="ai-text">-AI</span>
+                </span>
+            </a>
+
+            <ul class="nav-links">
+                <li><a href="../index.html" class="nav-link">Home</a></li>
+                <li><a href="prompts.html" class="nav-link">Prompts</a></li>
+                <li><a href="services.html" class="nav-link">Services</a></li>
+                <li><a href="ai-tools.html" class="nav-link active">AI Tools</a></li>
+                <li><a href="blog.html" class="nav-link">Blog</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+
+            <div class="nav-actions">
+                <a href="login.html" class="btn btn-secondary"
+                    style="background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); margin-right: 1rem;">Login</a>
+                <a href="contact.html" class="btn btn-primary">Get Started</a>
+            </div>
+
+            <button class="nav-toggle" aria-label="Toggle Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="page-header">
+        <div class="container">
+            <span class="section-tag animate-on-scroll">Curated Collection</span>
+            <h1 class="page-title animate-on-scroll">AI <span class="gradient-text">Tools Directory</span></h1>
+            <p class="page-subtitle animate-on-scroll">Discover the best AI tools in the market. Carefully curated and
+                reviewed for your creative and business needs.</p>
+        </div>
+    </header>
+
+    <!-- Tools Section -->
+    <section class="section">
+        <div class="container">
+
+            <!-- Filter -->
+            <div class="tools-filter animate-on-scroll">
+                <button class="filter-btn active" data-filter="all">All Tools</button>
+                <button class="filter-btn" data-filter="image">Image</button>
+                <button class="filter-btn" data-filter="text">Text</button>
+                <button class="filter-btn" data-filter="video">Video</button>
+                <button class="filter-btn" data-filter="code">Code</button>
+                <button class="filter-btn" data-filter="audio">Audio</button>
+                <button class="filter-btn" data-filter="productivity">Productivity</button>
+            </div>
+
+            <!-- Tools Grid -->
+            <div class="tools-grid">
+
+                <!-- Image Tools -->
+                <div class="card tool-card animate-on-scroll" data-category="image">
+                    <div class="tool-header">
+                        <div class="tool-logo" style="background: linear-gradient(135deg, #FF6B6B, #FF8E53);">M</div>
+                        <div class="tool-info">
+                            <h4>Midjourney</h4>
+                            <span>AI Image Generation</span>
+                        </div>
+                    </div>
+                    <p class="card-description">Create stunning artwork and images from text descriptions.
+                        Industry-leading quality for designers, artists, and content creators.</p>
+                    <div class="tool-tags">
+                        <span class="tool-tag">Image</span>
+                        <span class="tool-tag">Art</span>
+                        <span class="tool-tag">Design</span>
+                    </div>
+                    <a href="#" class="tool-link">Learn More →</a>
+                </div>
+
+                <div class="card tool-card animate-on-scroll" data-category="image">
+                    <div class="tool-header">
+                        <div class="tool-logo" style="background: linear-gradient(135deg, #5851DB, #C13584);">D</div>
+                        <div class="tool-info">
+                            <h4>DALL-E 3</h4>
+                            <span>OpenAI Image Creation</span>
+                        </div>
+                    </div>
+                    <p class="card-description">OpenAI's latest image generation model. Create highly detailed and
+                        accurate images from natural language descriptions.</p>
+                    <div class="tool-tags">
+                        <span class="tool-tag">Image</span>
+                        <span class="tool-tag">OpenAI</span>
+                        <span class="tool-tag">Creative</span>
+                    </div>
+                    <a href="#" class="tool-link">Learn More →</a>
+                </div>
+
+                <div class="card tool-card animate-on-scroll" data-category="image">
+                    <div class="tool-header">
+                        <div class="tool-logo" style="background: linear-gradient(135deg, #4158D0, #C850C0);">S</div>
+                        <div class="tool-info">
+                            <h4>Stable Diffusion</h4>
+                            <span>Open Source AI Art</span>
+                        </div>
+                    </div>
+                    <p class="card-description">Open-source image generation model. Full control and customization with
+                        local deployment options for privacy and flexibility.</p>
+                    <div class="tool-tags">
+                        <span class="tool-tag">Image</span>
+                        <span class="tool-tag">Open Source</span>
+                        <span class="tool-tag">Local</span>
+                    </div>
+                    <a href="#" class="tool-link">Learn More →</a>
+                </div>
+
+                <!-- Text Tools -->
+                <div class="card tool-card animate-on-scroll" data-category="text">
+                    <div class="tool-header">
+                        <div class="tool-logo" style="background: linear-gradient(135deg, #74AA9C, #10A37F);">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="white"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M22.2819 9.82116C22.1842 9.20656 21.8453 8.65026 21.3259 8.24356C20.8065 7.83686 20.1419 7.60806 19.46 7.60806H19.4319L19.3479 7.62506L18.4219 2.22706C18.3379 1.73406 18.0679 1.28406 17.6719 0.945063C17.2759 0.606063 16.7779 0.404063 16.2759 0.384063C15.7739 0.364063 15.2819 0.528063 14.8859 0.835063C14.4899 1.14206 14.1959 1.57906 14.0779 2.06206L13.1239 5.89206C12.7539 5.83606 12.3759 5.80806 11.9999 5.80806C9.17291 5.80806 6.55191 7.22206 5.01891 9.87311C3.48491 12.5252 3.48491 15.7592 5.01891 18.4112C5.11591 19.0262 5.45491 19.5822 5.97491 19.9892C6.49491 20.3962 7.15991 20.6252 7.84191 20.6252H7.87091L7.95491 20.6082L8.87991 26.0062C8.96391 26.4992 9.23391 26.9492 9.62991 27.2882C10.0259 27.6272 10.5239 27.8292 11.0259 27.8492C11.5279 27.8692 12.0199 27.7052 12.4159 27.3982C12.8119 27.0912 13.1059 26.6542 13.2239 26.1712L14.1779 22.3412C14.5479 22.3972 14.9259 22.4252 15.3019 22.4252C18.1289 22.4252 20.7499 21.0112 22.2819 18.3602C23.8169 15.7082 23.8169 12.4732 22.2819 9.82116ZM11.6649 9.53106L12.5899 14.9271C12.6319 15.1761 12.7599 15.4051 12.9529 15.5581C13.1459 15.7111 13.3879 15.7761 13.6339 15.7361C13.8449 15.7001 14.0329 15.5961 14.1679 15.4391L18.7309 10.1341C19.1419 12.0171 18.7309 14.0771 17.5149 15.6571C16.2989 17.2371 14.3949 18.1571 12.3949 18.1571C11.7519 18.1571 11.1169 18.0671 10.5019 17.8921L11.6649 9.53106ZM19.5599 5.86506C19.8659 5.82806 20.1709 5.80806 20.4749 5.80806C21.9059 5.80806 23.2389 6.22306 24.3649 6.94206L18.7299 13.5041L18.2399 10.6401C18.1639 10.1981 17.9159 9.80506 17.5449 9.54006C17.1729 9.27406 16.7079 9.15706 16.2419 9.21306C15.9329 9.25006 15.6329 9.35106 15.3589 9.50806L19.5599 5.86506ZM6.33191 22.3681C4.77091 21.0551 3.94591 19.0602 4.09891 17.0271L9.17191 19.2601C9.60591 19.4511 10.1019 19.4231 10.5119 19.1821C10.9229 18.9411 11.1929 18.5201 11.2399 18.0461C11.2709 17.7301 11.2079 17.4191 11.0609 17.1431L6.33191 22.3681ZM6.09691 14.1551L11.5039 11.7821C11.9379 11.5911 12.4339 11.6191 12.8439 11.8601C13.2539 12.1011 13.5249 12.5221 13.5709 12.9961C13.6339 13.6301 13.3449 14.2491 12.8339 14.6191L6.61991 19.1171C5.69691 17.5021 5.48591 15.5491 6.09691 14.1551Z" />
+                            </svg>
+                        </div>
+                        <div class="tool-info">
+                            <h4>ChatGPT</h4>
+                            <span>AI Conversation</span>
+                        </div>
+                    </div>
+                    <p class="card-description">Advanced conversational AI for writing, coding, analysis, and creative
+                        tasks. The most versatile AI assistant available.</p>
+                    <div class="tool-tags">
+                        <span class="tool-tag">Text</span>
+                        <span class="tool-tag">Chat</span>
+                        <span class="tool-tag">Writing</span>
+                    </div>
+                    <a href="#" class="tool-link">Learn More →</a>
+                </div>
+
+                <div class="card tool-card animate-on-scroll" data-category="text">
+                    <div class="tool-header">
+                        <div class="tool-logo" style="background: linear-gradient(135deg, #0077B5, #00A0DC);">C</div>
+                        <div class="tool-info">
+                            <h4>Claude</h4>
+                            <span>Anthropic AI</span>
+                        </div>
+                    </div>
+                    <p class="card-description">Thoughtful AI assistant focused on being helpful, harmless, and honest.
+                        Excellent for long-form content and analysis.</p>
+                    <div class="tool-tags">
+                        <span class="tool-tag">Text</span>
+                        <span class="tool-tag">Analysis</span>
+                        <span class="tool-tag">Writing</span>
+                    </div>
+                    <a href="#" class="tool-link">Learn More →</a>
+                </div>
+
+                <div class="card tool-card animate-on-scroll" data-category="text">
+                    <div class="tool-header">
+                        <div class="tool-logo" style="background: linear-gradient(135deg, #8B5CF6, #D946EF);">G</div>
+                        <div class="tool-info">
+                            <h4>Gemini</h4>
+                            <span>Google AI</span>
+                        </div>
+                    </div>
+                    <p class="card-description">Google's most capable AI model with multimodal understanding. Process
+                        text, images, and code seamlessly.</p>
+                    <div class="tool-tags">
+                        <span class="tool-tag">Text</span>
+                        <span class="tool-tag">Multimodal</span>
+                        <span class="tool-tag">Google</span>
+                    </div>
+                    <a href="#" class="tool-link">Learn More →</a>
+                </div>
+
+                <!-- Video Tools -->
+                <div class="card tool-card animate-on-scroll" data-category="video">
+                    <div class="tool-header">
+                        <div class="tool-logo" style="background: linear-gradient(135deg, #667eea, #764ba2);">R</div>
+                        <div class="tool-info">
+                            <h4>Runway</h4>
+                            <span>AI Video Creation</span>
+                        </div>
+                    </div>
+                    <p class="card-description">Generate and edit videos using AI. Create stunning visuals, remove
+                        backgrounds, and transform your video content.</p>
+                    <div class="tool-tags">
+                        <span class="tool-tag">Video</span>
+                        <span class="tool-tag">Editing</span>
+                        <span class="tool-tag">Effects</span>
+                    </div>
+                    <a href="#" class="tool-link">Learn More →</a>
+                </div>
+
+                <div class="card tool-card animate-on-scroll" data-category="video">
+                    <div class="tool-header">
+                        <div class="tool-logo" style="background: linear-gradient(135deg, #FF4B4B, #FF8E53);">S</div>
+                        <div class="tool-info">
+                            <h4>Sora</h4>
+                            <span>OpenAI Video</span>
+                        </div>
+                    </div>
+                    <p class="card-description">Text-to-video AI model from OpenAI. Generate realistic and imaginative
+                        video scenes from text descriptions.</p>
+                    <div class="tool-tags">
+                        <span class="tool-tag">Video</span>
+                        <span class="tool-tag">OpenAI</span>
+                        <span class="tool-tag">Generation</span>
+                    </div>
+                    <a href="#" class="tool-link">Learn More →</a>
+                </div>
+
+                <div class="card tool-card animate-on-scroll" data-category="video">
+                    <div class="tool-header">
+                        <div class="tool-logo" style="background: linear-gradient(135deg, #00C9FF, #92FE9D);">P</div>
+                        <div class="tool-info">
+                            <h4>Pika</h4>
+                            <span>Video Generation</span>
+                        </div>
+                    </div>
+                    <p class="card-description">Create and edit videos with AI. Transform images to video, add motion,
+                        and bring your creative ideas to life.</p>
+                    <div class="tool-tags">
+                        <span class="tool-tag">Video</span>
+                        <span class="tool-tag">Motion</span>
+                        <span class="tool-tag">Creative</span>
+                    </div>
+                    <a href="#" class="tool-link">Learn More →</a>
+                </div>
+
+                <!-- Code Tools -->
+                <div class="card tool-card animate-on-scroll" data-category="code">
+                    <div class="tool-header">
+                        <div class="tool-logo" style="background: linear-gradient(135deg, #f093fb, #f5576c);">G</div>
+                        <div class="tool-info">
+                            <h4>GitHub Copilot</h4>
+                            <span>AI Code Assistant</span>
+                        </div>
+                    </div>
+                    <p class="card-description">Your AI pair programmer. Suggests code completions, writes functions,
+                        and helps you code faster with context-aware intelligence.</p>
+                    <div class="tool-tags">
+                        <span class="tool-tag">Code</span>
+                        <span class="tool-tag">Developer</span>
+                        <span class="tool-tag">IDE</span>
+                    </div>
+                    <a href="#" class="tool-link">Learn More →</a>
+                </div>
+
+                <div class="card tool-card animate-on-scroll" data-category="code">
+                    <div class="tool-header">
+                        <div class="tool-logo" style="background: linear-gradient(135deg, #6366F1, #8B5CF6);">C</div>
+                        <div class="tool-info">
+                            <h4>Cursor</h4>
+                            <span>AI-First Code Editor</span>
+                        </div>
+                    </div>
+                    <p class="card-description">The AI-first code editor. Built for pair-programming with AI, making you
+                        extraordinarily productive.</p>
+                    <div class="tool-tags">
+                        <span class="tool-tag">Code</span>
+                        <span class="tool-tag">Editor</span>
+                        <span class="tool-tag">AI-Native</span>
+                    </div>
+                    <a href="#" class="tool-link">Learn More →</a>
+                </div>
+
+                <div class="card tool-card animate-on-scroll" data-category="code">
+                    <div class="tool-header">
+                        <div class="tool-logo" style="background: linear-gradient(135deg, #22D3EE, #0EA5E9);">R</div>
+                        <div class="tool-info">
+                            <h4>Replit AI</h4>
+                            <span>AI-Powered IDE</span>
+                        </div>
+                    </div>
+                    <p class="card-description">Build software faster with AI. Complete autocompletion, debugging
+                        assistance, and code generation in the browser.</p>
+                    <div class="tool-tags">
+                        <span class="tool-tag">Code</span>
+                        <span class="tool-tag">Browser</span>
+                        <span class="tool-tag">Deploy</span>
+                    </div>
+                    <a href="#" class="tool-link">Learn More →</a>
+                </div>
+
+                <!-- Audio Tools -->
+                <div class="card tool-card animate-on-scroll" data-category="audio">
+                    <div class="tool-header">
+                        <div class="tool-logo" style="background: linear-gradient(135deg, #11998e, #38ef7d);">E</div>
+                        <div class="tool-info">
+                            <h4>ElevenLabs</h4>
+                            <span>AI Voice Generator</span>
+                        </div>
+                    </div>
+                    <p class="card-description">Create natural-sounding voiceovers and clone voices with AI. Perfect for
+                        podcasts, videos, and audio content.</p>
+                    <div class="tool-tags">
+                        <span class="tool-tag">Audio</span>
+                        <span class="tool-tag">Voice</span>
+                        <span class="tool-tag">TTS</span>
+                    </div>
+                    <a href="#" class="tool-link">Learn More →</a>
+                </div>
+
+                <div class="card tool-card animate-on-scroll" data-category="audio">
+                    <div class="tool-header">
+                        <div class="tool-logo" style="background: linear-gradient(135deg, #FF6B6B, #845EC2);">S</div>
+                        <div class="tool-info">
+                            <h4>Suno</h4>
+                            <span>AI Music Creation</span>
+                        </div>
+                    </div>
+                    <p class="card-description">Create complete songs with AI. Generate music, lyrics, and vocals from
+                        text prompts. No musical experience needed.</p>
+                    <div class="tool-tags">
+                        <span class="tool-tag">Audio</span>
+                        <span class="tool-tag">Music</span>
+                        <span class="tool-tag">Creative</span>
+                    </div>
+                    <a href="#" class="tool-link">Learn More →</a>
+                </div>
+
+                <div class="card tool-card animate-on-scroll" data-category="audio">
+                    <div class="tool-header">
+                        <div class="tool-logo" style="background: linear-gradient(135deg, #F472B6, #EC4899);">M</div>
+                        <div class="tool-info">
+                            <h4>Murf</h4>
+                            <span>AI Voice Studio</span>
+                        </div>
+                    </div>
+                    <p class="card-description">Professional AI voiceovers in minutes. 120+ voices across 20+ languages
+                        for videos, presentations, and more.</p>
+                    <div class="tool-tags">
+                        <span class="tool-tag">Audio</span>
+                        <span class="tool-tag">Voiceover</span>
+                        <span class="tool-tag">Pro</span>
+                    </div>
+                    <a href="#" class="tool-link">Learn More →</a>
+                </div>
+
+                <!-- Productivity Tools -->
+                <div class="card tool-card animate-on-scroll" data-category="productivity">
+                    <div class="tool-header">
+                        <div class="tool-logo" style="background: linear-gradient(135deg, #6366F1, #8B5CF6);">N</div>
+                        <div class="tool-info">
+                            <h4>Notion AI</h4>
+                            <span>AI-Powered Workspace</span>
+                        </div>
+                    </div>
+                    <p class="card-description">AI built into your workspace. Write faster, think bigger, and augment
+                        creativity directly in your notes and documents.</p>
+                    <div class="tool-tags">
+                        <span class="tool-tag">Productivity</span>
+                        <span class="tool-tag">Writing</span>
+                        <span class="tool-tag">Notes</span>
+                    </div>
+                    <a href="#" class="tool-link">Learn More →</a>
+                </div>
+
+                <div class="card tool-card animate-on-scroll" data-category="productivity">
+                    <div class="tool-header">
+                        <div class="tool-logo" style="background: linear-gradient(135deg, #4ADE80, #22C55E);">O</div>
+                        <div class="tool-info">
+                            <h4>Otter.ai</h4>
+                            <span>AI Meeting Assistant</span>
+                        </div>
+                    </div>
+                    <p class="card-description">Automatic meeting notes and transcription. Capture conversations,
+                        generate summaries, and share action items.</p>
+                    <div class="tool-tags">
+                        <span class="tool-tag">Productivity</span>
+                        <span class="tool-tag">Meetings</span>
+                        <span class="tool-tag">Transcription</span>
+                    </div>
+                    <a href="#" class="tool-link">Learn More →</a>
+                </div>
+
+                <div class="card tool-card animate-on-scroll" data-category="productivity">
+                    <div class="tool-header">
+                        <div class="tool-logo" style="background: linear-gradient(135deg, #3B82F6, #1D4ED8);">P</div>
+                        <div class="tool-info">
+                            <h4>Perplexity</h4>
+                            <span>AI Search Engine</span>
+                        </div>
+                    </div>
+                    <p class="card-description">AI-powered answer engine. Get instant answers with cited sources.
+                        Perfect for research and knowledge discovery.</p>
+                    <div class="tool-tags">
+                        <span class="tool-tag">Productivity</span>
+                        <span class="tool-tag">Search</span>
+                        <span class="tool-tag">Research</span>
+                    </div>
+                    <a href="#" class="tool-link">Learn More →</a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="section cta-section">
+        <div class="container">
+            <div class="cta-box animate-on-scroll">
+                <h2 class="cta-title">Want Us to <span class="gradient-text">Recommend Tools</span>?</h2>
+                <p class="cta-subtitle">Not sure which AI tools are right for your needs? Let our experts help you find
+                    the perfect solutions.</p>
+                <div class="cta-actions">
+                    <a href="contact.html" class="btn btn-primary">Get Recommendations</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="../index.html" class="footer-logo">
+                        <span class="logo-icon">A</span>
+                        <span>Atten<span class="gradient-text">X</span></span>
+                    </a>
+                    <p class="footer-description">Your AI-powered digital partner. We combine cutting-edge artificial
+                        intelligence with creative digital marketing.</p>
+                    <div class="footer-social">
+                        <a href="#" class="social-link" aria-label="Twitter">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path
+                                    d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z" />
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Instagram">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <rect x="2" y="2" width="20" height="20" rx="5" />
+                                <circle cx="12" cy="12" r="4" />
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link" aria-label="LinkedIn">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path
+                                    d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+                                <rect x="2" y="9" width="4" height="12" />
+                                <circle cx="4" cy="4" r="2" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="services.html" class="footer-link">Instagram Content</a></li>
+                        <li><a href="ai-tools.html" class="footer-link">AI Tools</a></li>
+                        <li><a href="blog.html" class="footer-link">AI Blog</a></li>
+                        <li><a href="services.html" class="footer-link">Digital Marketing</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Company</h4>
+                    <ul class="footer-links">
+                        <li><a href="#" class="footer-link">About Us</a></li>
+                        <li><a href="blog.html" class="footer-link">Blog</a></li>
+                        <li><a href="contact.html" class="footer-link">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Resources</h4>
+                    <ul class="footer-links">
+                        <li><a href="ai-tools.html" class="footer-link">AI Tools Directory</a></li>
+                        <li><a href="#" class="footer-link">Documentation</a></li>
+                        <li><a href="#" class="footer-link">Support</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p class="footer-copyright">© 2026 AttenX-AI. All rights reserved.</p>
+                <div class="footer-legal">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <a href="#" class="back-to-top" aria-label="Back to Top">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="18 15 12 9 6 15" />
+        </svg>
+    </a>
+
+    <script src="../js/main.js"></script>
+</body>
+
+</html>
