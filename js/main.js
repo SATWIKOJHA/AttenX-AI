@@ -13,6 +13,7 @@ document.addEventListener('DOMContentLoaded', function () {
   initBackToTop();
   initCounterAnimation();
   initToolsFilter();
+  initCopyButtons(); // Initialize copy buttons
   initAuth(); // Initialize authentication
 
 });
@@ -769,4 +770,48 @@ function sendNewsletterToSubscribers(blogTitle, blogContent) {
   */
 
   return subscribers;
+}
+
+// =====================================================
+// Copy Prompt Functionality
+// =====================================================
+function initCopyButtons() {
+  const copyBtns = document.querySelectorAll('.copy-btn');
+
+  copyBtns.forEach(btn => {
+    btn.addEventListener('click', function () {
+      // Find the code block associated with this button
+      // Assuming the code block is within the same parent or immediately preceding
+      const container = btn.closest('.prompt-content') || btn.parentElement;
+      const codeBlock = container.querySelector('.code-block');
+
+      if (codeBlock) {
+        // Get the text content (preserves newlines, ignores HTML tags)
+        const textToCopy = codeBlock.innerText;
+
+        navigator.clipboard.writeText(textToCopy).then(() => {
+          // Success feedback
+          const originalText = btn.textContent;
+          btn.textContent = 'Copied!';
+
+          // Optional: Add a success class color if defined, or just rely on text
+          const originalBg = btn.style.background;
+          btn.style.background = '#10B981'; // Green success color
+          btn.disabled = true;
+
+          setTimeout(() => {
+            btn.textContent = originalText;
+            btn.style.background = originalBg;
+            btn.disabled = false;
+          }, 2000);
+        }).catch(err => {
+          console.error('Failed to copy text: ', err);
+          btn.textContent = 'Error!';
+          setTimeout(() => {
+            btn.textContent = originalText;
+          }, 2000);
+        });
+      }
+    });
+  });
 }
