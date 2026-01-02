@@ -32,8 +32,8 @@ You only need a modern web browser and a code editor (VS Code recommended).
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/SATWIKOJHA/AttenX-AI.git
-   cd AttenX-AI
+   git clone https://github.com/SATWIKOJHA/attenxai.git
+   cd attenxai
    ```
 
 2. **Open the project**
