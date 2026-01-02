@@ -152,18 +152,66 @@
             margin-right: 0.75rem;
         }
 
-        /* Ambient Background inputs */
         .ambient-shape {
             position: absolute;
             filter: blur(80px);
             z-index: 1;
             opacity: 0.6;
         }
+
+        .alert {
+            padding: 1rem;
+            border-radius: var(--radius-md);
+            margin-bottom: 1.5rem;
+            font-size: 0.9rem;
+            display: none;
+        }
+
+        .alert-error {
+            background: rgba(239, 68, 68, 0.2);
+            border: 1px solid rgba(239, 68, 68, 0.3);
+            color: #fca5a5;
+        }
+
+        .alert-success {
+            background: rgba(34, 197, 94, 0.2);
+            border: 1px solid rgba(34, 197, 94, 0.3);
+            color: #86efac;
+        }
+
+        .btn-loading {
+            opacity: 0.7;
+            pointer-events: none;
+        }
+
+        .form-tabs {
+            display: flex;
+            margin-bottom: 2rem;
+            border-radius: var(--radius-md);
+            background: rgba(255, 255, 255, 0.05);
+            padding: 4px;
+        }
+
+        .form-tab {
+            flex: 1;
+            padding: 0.75rem;
+            border: none;
+            background: transparent;
+            color: var(--text-secondary);
+            cursor: pointer;
+            border-radius: var(--radius-sm);
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .form-tab.active {
+            background: var(--gradient-primary);
+            color: white;
+        }
     </style>
 </head>
 
 <body>
-
     <!-- Loader -->
     <div class="loader">
         <div class="loader-content">
@@ -232,36 +280,79 @@
 
         <div class="login-card animate-on-scroll">
             <div class="login-header">
-                <h1 class="login-title">Welcome Back</h1>
-                <p class="login-subtitle">Sign in to access your AI Dashboard</p>
+                <h1 class="login-title" id="formTitle">Welcome Back</h1>
+                <p class="login-subtitle" id="formSubtitle">Sign in to access your AI Dashboard</p>
             </div>
 
-            <form action="#" method="POST" onsubmit="event.preventDefault(); window.location.href='../index.html';">
+            <!-- Tabs -->
+            <div class="form-tabs">
+                <button class="form-tab active" id="loginTab" onclick="showLoginForm()">Sign In</button>
+                <button class="form-tab" id="registerTab" onclick="showRegisterForm()">Sign Up</button>
+            </div>
+
+            <!-- Alert Messages -->
+            <div class="alert alert-error" id="errorAlert"></div>
+            <div class="alert alert-success" id="successAlert"></div>
+
+            <!-- Login Form -->
+            <form id="loginForm" onsubmit="handleLogin(event)">
                 <div class="form-group">
-                    <label for="email" class="form-label">Email Address</label>
-                    <input type="email" id="email" class="form-input" placeholder="you@example.com" required>
+                    <label for="loginEmail" class="form-label">Email Address</label>
+                    <input type="email" id="loginEmail" class="form-input" placeholder="you@example.com" required>
                 </div>
 
                 <div class="form-group">
-                    <label for="password" class="form-label">Password</label>
-                    <input type="password" id="password" class="form-input" placeholder="••••••••" required>
+                    <label for="loginPassword" class="form-label">Password</label>
+                    <input type="password" id="loginPassword" class="form-input" placeholder="••••••••" required>
                 </div>
 
                 <div class="form-footer">
                     <label style="display: flex; align-items: center; cursor: pointer; color: var(--text-secondary);">
-                        <input type="checkbox" style="margin-right: 0.5rem; accent-color: var(--primary-purple);">
+                        <input type="checkbox" id="rememberMe"
+                            style="margin-right: 0.5rem; accent-color: var(--primary-purple);">
                         Remember me
                     </label>
                     <a href="#" class="form-link">Forgot Password?</a>
                 </div>
 
-                <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center;">Sign
-                    In</button>
+                <button type="submit" class="btn btn-primary" id="loginBtn"
+                    style="width: 100%; justify-content: center;">
+                    Sign In
+                </button>
+            </form>
+
+            <!-- Register Form (Hidden by default) -->
+            <form id="registerForm" style="display: none;" onsubmit="handleRegister(event)">
+                <div class="form-group">
+                    <label for="registerName" class="form-label">Full Name</label>
+                    <input type="text" id="registerName" class="form-input" placeholder="John Doe" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="registerEmail" class="form-label">Email Address</label>
+                    <input type="email" id="registerEmail" class="form-input" placeholder="you@example.com" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="registerPassword" class="form-label">Password</label>
+                    <input type="password" id="registerPassword" class="form-input" placeholder="••••••••" required
+                        minlength="6">
+                </div>
+
+                <div class="form-group">
+                    <label for="confirmPassword" class="form-label">Confirm Password</label>
+                    <input type="password" id="confirmPassword" class="form-input" placeholder="••••••••" required>
+                </div>
+
+                <button type="submit" class="btn btn-primary" id="registerBtn"
+                    style="width: 100%; justify-content: center;">
+                    Create Account
+                </button>
             </form>
 
             <div class="auth-separator">OR CONTINUE WITH</div>
 
-            <button class="social-btn">
+            <button class="social-btn" onclick="loginWithGoogle()">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="white">
                     <path
                         d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
@@ -276,24 +367,152 @@
                         d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"
                         fill="#EA4335" />
                 </svg>
-                Google
+                Continue with Google
             </button>
 
-            <button class="social-btn">
+            <button class="social-btn" onclick="alert('GitHub OAuth coming soon!')">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="white">
                     <path
                         d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
                 </svg>
-                GitHub
+                Continue with GitHub
             </button>
 
             <p style="text-align: center; margin-top: 1.5rem; color: var(--text-secondary); font-size: 0.9rem;">
-                Don't have an account? <a href="#" class="form-link">Sign Up</a>
+                By continuing, you agree to our <a href="#" class="form-link">Terms of Service</a>
             </p>
         </div>
     </div>
 
     <script src="../js/main.js"></script>
+    <script>
+        // Check for existing login on page load
+        window.onload = function () {
+            // Check if already logged in
+            if (isLoggedIn()) {
+                showSuccess('You are already logged in. Redirecting...');
+                setTimeout(() => {
+                    window.location.href = '../index.html';
+                }, 1500);
+            }
+        };
+
+        // Show/Hide Forms
+        function showLoginForm() {
+            document.getElementById('loginForm').style.display = 'block';
+            document.getElementById('registerForm').style.display = 'none';
+            document.getElementById('loginTab').classList.add('active');
+            document.getElementById('registerTab').classList.remove('active');
+            document.getElementById('formTitle').textContent = 'Welcome Back';
+            document.getElementById('formSubtitle').textContent = 'Sign in to access your AI Dashboard';
+            hideAlerts();
+        }
+
+        function showRegisterForm() {
+            document.getElementById('loginForm').style.display = 'none';
+            document.getElementById('registerForm').style.display = 'block';
+            document.getElementById('loginTab').classList.remove('active');
+            document.getElementById('registerTab').classList.add('active');
+            document.getElementById('formTitle').textContent = 'Create Account';
+            document.getElementById('formSubtitle').textContent = 'Join AttenX-AI and unlock AI power';
+            hideAlerts();
+        }
+
+        // Alert Functions
+        function showError(message) {
+            const alert = document.getElementById('errorAlert');
+            alert.textContent = message;
+            alert.style.display = 'block';
+            document.getElementById('successAlert').style.display = 'none';
+        }
+
+        function showSuccess(message) {
+            const alert = document.getElementById('successAlert');
+            alert.textContent = message;
+            alert.style.display = 'block';
+            document.getElementById('errorAlert').style.display = 'none';
+        }
+
+        function hideAlerts() {
+            document.getElementById('errorAlert').style.display = 'none';
+            document.getElementById('successAlert').style.display = 'none';
+        }
+
+        // Login Handler - using localStorage auth from main.js
+        function handleLogin(e) {
+            e.preventDefault();
+            hideAlerts();
+
+            const email = document.getElementById('loginEmail').value;
+            const password = document.getElementById('loginPassword').value;
+            const btn = document.getElementById('loginBtn');
+
+            btn.classList.add('btn-loading');
+            btn.textContent = 'Signing in...';
+
+            // Simulate network delay for UX
+            setTimeout(() => {
+                const result = loginUser(email, password);
+
+                if (result.success) {
+                    showSuccess('Login successful! Redirecting...');
+                    setTimeout(() => {
+                        window.location.href = '../index.html';
+                    }, 1000);
+                } else {
+                    showError(result.message);
+                    btn.classList.remove('btn-loading');
+                    btn.textContent = 'Sign In';
+                }
+            }, 500);
+        }
+
+        // Register Handler - using localStorage auth from main.js
+        function handleRegister(e) {
+            e.preventDefault();
+            hideAlerts();
+
+            const name = document.getElementById('registerName').value;
+            const email = document.getElementById('registerEmail').value;
+            const password = document.getElementById('registerPassword').value;
+            const confirmPassword = document.getElementById('confirmPassword').value;
+            const btn = document.getElementById('registerBtn');
+
+            if (password !== confirmPassword) {
+                showError('Passwords do not match');
+                return;
+            }
+
+            if (password.length < 6) {
+                showError('Password must be at least 6 characters');
+                return;
+            }
+
+            btn.classList.add('btn-loading');
+            btn.textContent = 'Creating account...';
+
+            // Simulate network delay for UX
+            setTimeout(() => {
+                const result = registerUser(name, email, password);
+
+                if (result.success) {
+                    showSuccess('Account created! Redirecting...');
+                    setTimeout(() => {
+                        window.location.href = '../index.html';
+                    }, 1000);
+                } else {
+                    showError(result.message);
+                    btn.classList.remove('btn-loading');
+                    btn.textContent = 'Create Account';
+                }
+            }, 500);
+        }
+
+        // Google Login - show message that it's a demo
+        function loginWithGoogle() {
+            showError('Google OAuth requires a backend server. This is a demo - please use email/password signup.');
+        }
+    </script>
 </body>
 
 </html>

@@ -119,8 +119,7 @@
       </ul>
 
       <div class="nav-actions">
-        <a href="pages/login.html" class="btn btn-secondary"
-          style="background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); margin-right: 1rem;">Login</a>
+
         <a href="#contact" class="btn btn-primary">Get Started</a>
       </div>
 
@@ -569,6 +568,28 @@
             intelligent monitoring in your DevOps workflow.</p>
         </article>
       </div>
+
+      <!-- Newsletter Subscribe Box -->
+      <div class="newsletter-box animate-on-scroll">
+        <div class="newsletter-content">
+          <div class="newsletter-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+              <polyline points="22,6 12,13 2,6" />
+            </svg>
+          </div>
+          <div class="newsletter-text">
+            <h3>Stay Updated with AI Insights</h3>
+            <p>Subscribe to get the latest blog posts, AI trends, and exclusive content delivered to your inbox.</p>
+          </div>
+        </div>
+        <button class="btn btn-primary newsletter-btn" onclick="openSubscribeModal()">
+          Subscribe Now
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M5 12h14M12 5l7 7-7 7" />
+          </svg>
+        </button>
+      </div>
     </div>
   </section>
 
@@ -823,6 +844,51 @@
       <polyline points="18 15 12 9 6 15" />
     </svg>
   </a>
+
+  <!-- Subscribe Modal -->
+  <div class="subscribe-modal" id="subscribeModal">
+    <div class="modal-overlay" onclick="closeSubscribeModal()"></div>
+    <div class="modal-content">
+      <button class="modal-close" onclick="closeSubscribeModal()">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="18" y1="6" x2="6" y2="18" />
+          <line x1="6" y1="6" x2="18" y2="18" />
+        </svg>
+      </button>
+      <div class="modal-icon">
+        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="url(#gradient)" stroke-width="2">
+          <defs>
+            <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#7C3AED" />
+              <stop offset="100%" stop-color="#06B6D4" />
+            </linearGradient>
+          </defs>
+          <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+          <polyline points="22,6 12,13 2,6" />
+        </svg>
+      </div>
+      <h2 class="modal-title">Subscribe to Our Newsletter</h2>
+      <p class="modal-subtitle">Get the latest AI insights, blog posts, and exclusive content delivered straight to your
+        inbox.</p>
+
+      <form class="subscribe-form" onsubmit="handleSubscribe(event)">
+        <div class="subscribe-input-group">
+          <input type="email" id="subscribeEmail" class="subscribe-input" placeholder="Enter your email address"
+            required>
+          <button type="submit" class="btn btn-primary subscribe-submit" id="subscribeBtn">
+            Subscribe
+          </button>
+        </div>
+        <p class="subscribe-note">We respect your privacy. Unsubscribe at any time.</p>
+      </form>
+
+      <div class="subscribe-success" id="subscribeSuccess" style="display: none;">
+        <div class="success-icon">✓</div>
+        <h3>You're Subscribed!</h3>
+        <p>Thank you for subscribing. You'll receive our latest updates soon.</p>
+      </div>
+    </div>
+  </div>
 
   <!-- Scripts -->
   <script src="js/main.js"></script>
